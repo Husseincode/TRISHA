@@ -2,7 +2,7 @@
 
 'use client';
 import React, { useEffect, useState } from 'react';
-import Loading from '@/app/components/onLoad/loading';
+import Loading from '@/app/components/Loading';
 
 const EntryPoint = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
