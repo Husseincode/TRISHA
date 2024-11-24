@@ -3,10 +3,7 @@
 import React, { FC } from 'react';
 import { LoadingComponentProps } from '@/app/components/Loading/types';
 
-const Section11: FC<LoadingComponentProps> = ({
-  initialColor,
-  reverseInitialColor,
-}) => {
+const Section11: FC<LoadingComponentProps> = ({}) => {
   return (
     <div className='min-h-[600px] flex items-center justify-center py-[80px] px-[310px] bg-[#757272] w-full'>
       <div className='container flex flex-col items-center justify-center gap-[52px]'>
@@ -15,6 +12,7 @@ const Section11: FC<LoadingComponentProps> = ({
           height='26'
           viewBox='0 0 364 26'
           fill='none'
+          className='slide-from-left'
           xmlns='http://www.w3.org/2000/svg'>
           <rect width='364' height='26' fill='#ABA7A7' />
         </svg>
@@ -24,6 +22,7 @@ const Section11: FC<LoadingComponentProps> = ({
           height='50'
           viewBox='0 0 546 50'
           fill='none'
+          className='slide-from-right'
           xmlns='http://www.w3.org/2000/svg'>
           <rect width='546' height='50' fill='#ABA7A7' />
         </svg>
@@ -33,6 +32,7 @@ const Section11: FC<LoadingComponentProps> = ({
           height='95'
           viewBox='0 0 820 95'
           fill='none'
+          className='slide-from-left'
           xmlns='http://www.w3.org/2000/svg'>
           <rect width='820' height='20' fill='#ABA7A7' />
           <rect
@@ -54,6 +54,7 @@ const Section11: FC<LoadingComponentProps> = ({
           height='71'
           viewBox='0 0 728 71'
           fill='none'
+          className='slide-from-right'
           xmlns='http://www.w3.org/2000/svg'>
           <g clip-path='url(#clip0_347_9)'>
             <rect

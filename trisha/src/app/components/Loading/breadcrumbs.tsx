@@ -8,7 +8,7 @@ export const BreadCrumb: React.FC<LoadingComponentProps> = ({
   reverseInitialColor: reverseColorType,
 }) => {
   return (
-    <div className='lg:w-1/3 w-[300px] min-h-[599px] slide-from-top'>
+    <div className='lg:w-1/3 w-[300px] md:w-[400px] min-h-[599px] slide-from-top'>
       <div
         className={`min-h-[243px] transition duration-500 bg-[#757272]`}></div>
       <div className='p-10 flex flex-col gap-[50px] items-center justify-center'>
@@ -227,7 +227,7 @@ export const BreadCrumb3: React.FC<LoadingComponentProps> = ({
       height='700'
       viewBox='0 0 430 700'
       fill='none'
-      className='lg:w-1/3 w-full'
+      className='lg:w-1/3 w-[300px] md:w-[430px]'
       xmlns='http://www.w3.org/2000/svg'>
       <rect width='430' height='700' fill={reverseColorType} />
       <rect
@@ -401,7 +401,7 @@ export const Card: FC<LoadingComponentProps> = ({
       height='700'
       viewBox='0 0 400 700'
       fill='none'
-      className='lg:w-1/3 w-full'
+      className='lg:w-1/3 w-full slide-from-right'
       xmlns='http://www.w3.org/2000/svg'>
       <rect
         width='352.381'
@@ -486,6 +486,166 @@ export const UnitCard = () => {
         height='20'
         transform='translate(96 100)'
         fill='#757272'
+      />
+    </svg>
+  );
+};
+
+export const FooterComponent1 = () => {
+  return (
+    <svg
+      width='374'
+      height='60'
+      viewBox='0 0 374 60'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'>
+      <rect y='8' width='50' height='50' rx='12' fill='#ABA7A7' />
+      <rect width='300' height='20' transform='translate(74)' fill='#ABA7A7' />
+      <rect
+        width='250'
+        height='20'
+        transform='translate(74 40)'
+        fill='#ABA7A7'
+      />
+    </svg>
+  );
+};
+
+export const FooterComponent2 = () => {
+  return (
+    <svg
+      width='154'
+      height='244'
+      viewBox='0 0 154 244'
+      fill='none'
+      className=' w-full py-[30px] flex justify-center items-center'
+      xmlns='http://www.w3.org/2000/svg'>
+      <rect width='70' height='30' fill='#ABA7A7' />
+      <rect width='70' height='5' transform='translate(0 40)' fill='#ABA7A7' />
+      <rect width='80' height='15' transform='translate(4 69)' fill='#ABA7A7' />
+      <rect
+        width='70'
+        height='15'
+        transform='translate(4 109)'
+        fill='#ABA7A7'
+      />
+      <rect
+        width='120'
+        height='15'
+        transform='translate(4 149)'
+        fill='#ABA7A7'
+      />
+      <rect
+        width='130'
+        height='15'
+        transform='translate(4 189)'
+        fill='#ABA7A7'
+      />
+      <rect
+        width='150'
+        height='15'
+        transform='translate(4 229)'
+        fill='#ABA7A7'
+      />
+    </svg>
+  );
+};
+
+export const FooterComponent3 = () => {
+  return (
+    <svg
+      width='50'
+      height='30'
+      viewBox='0 0 50 30'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'>
+      <rect width='50' height='30' rx='4' fill='#ABA7A7' />
+    </svg>
+  );
+};
+
+export const FooterEllipses = () => {
+  return (
+    <svg
+      width='180'
+      height='30'
+      viewBox='0 0 180 30'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'>
+      <rect width='30' height='30' rx='12' fill='#ABA7A7' />
+      <rect x='50' width='30' height='30' rx='12' fill='#ABA7A7' />
+      <rect x='100' width='30' height='30' rx='12' fill='#ABA7A7' />
+      <rect x='150' width='30' height='30' rx='12' fill='#ABA7A7' />
+    </svg>
+  );
+};
+
+export const BreadCrumb5 = () => {
+  return (
+    <svg
+      width='300'
+      height='287'
+      viewBox='0 0 300 287'
+      fill='none'
+      className='md:w-[initial] w-[300px]'
+      xmlns='http://www.w3.org/2000/svg'>
+      <circle cx='54.6875' cy='35' r='35' fill='#ABA7A7' />
+      <rect
+        width='281.25'
+        height='23'
+        transform='translate(0 101)'
+        fill='#ABA7A7'
+      />
+      <rect
+        width='300'
+        height='18'
+        transform='translate(0 158)'
+        fill='#ABA7A7'
+      />
+      <rect
+        width='281.25'
+        height='18'
+        transform='translate(0 195)'
+        fill='#ABA7A7'
+      />
+      <rect
+        width='253.125'
+        height='18'
+        transform='translate(0 232)'
+        fill='#ABA7A7'
+      />
+      <rect
+        width='140.625'
+        height='18'
+        transform='translate(0 269)'
+        fill='#ABA7A7'
+      />
+    </svg>
+  );
+};
+
+export const StraightLine = ({
+  width,
+  height,
+  className,
+}: {
+  width?: string;
+  height?: string;
+  className?: string;
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox='0 0 333 24'
+      fill='none'
+      className={className}
+      xmlns='http://www.w3.org/2000/svg'>
+      <rect
+        width={width}
+        height={height}
+        transform='translate(0 0.5)'
+        fill='#ABA7A7'
       />
     </svg>
   );

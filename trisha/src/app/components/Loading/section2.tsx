@@ -9,13 +9,13 @@ const Section2: FC<LoadingComponentProps> = ({
   initialColor,
 }) => {
   return (
-    <div className='min-h-[800px] py-[100px] gap-[40px] flex flex-col lg:flex-row'>
+    <div className='min-h-[800px] py-[50px] md:py-[100px] gap-[40px] flex flex-col lg:flex-row'>
       <BreadCrumb
         initialColor={initialColor}
         reverseInitialColor={reverseInitialColor}
       />
       <div
-        className={`lg:w-1/3 w-[300px] min-h-[599px] slide-from-bottom bg-[#757272]`}>
+        className={`lg:w-1/3 w-[300px] border-2 md:w-[400px] min-h-[599px] slide-from-bottom bg-[#757272]`}>
         <div className='p-10 flex flex-col gap-[50px] items-center justify-center'>
           <svg
             width='200'

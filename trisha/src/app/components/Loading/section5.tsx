@@ -9,7 +9,7 @@ const Section5: FC<LoadingComponentProps> = ({
   reverseInitialColor,
 }) => {
   return (
-    <div className='flex flex-col md:flex-row slide-from-left py-[100px] gap-[43px] px-[10px]'>
+    <div className='flex flex-col md:flex-row slide-from-left min-h-[800px] gap-x-[20px] md:gap-x-[43px] px-[50px]'>
       {Array.from({ length: 3 }).map((__, idx: number) => {
         return (
           <BreadCrumb3

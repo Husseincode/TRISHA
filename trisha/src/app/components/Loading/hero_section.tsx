@@ -8,7 +8,7 @@ const HeroSection: FC<LoadingComponentProps> = ({
   initialColor,
 }) => {
   return (
-    <div className='min-h-[710px] container py-[50px] px-[20px] flex flex-col items-center gap-[20px]'>
+    <div className='min-h-[375px] md:min-h-[586px] lg:min-h-[710px] container py-[50px] px-[20px] flex flex-col items-center gap-[20px]'>
       <svg
         width='1000'
         height='400'

@@ -8,7 +8,7 @@ const Section4: FC<LoadingComponentProps> = ({
   initialColor,
 }) => {
   return (
-    <div className='flex flex-col min-h-[435px] py-[100px] gap-[50px] slide-from-top'>
+    <div className='flex flex-col min-h-[435px] pt-[100px] px-[50px] gap-[50px] slide-from-top'>
       <svg
         width='650'
         height='120'

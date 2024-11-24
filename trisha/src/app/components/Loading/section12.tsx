@@ -16,6 +16,7 @@ const Section12: FC<LoadingComponentProps> = ({
           height='80'
           viewBox='0 0 370 80'
           fill='none'
+          className='slide-from-top'
           xmlns='http://www.w3.org/2000/svg'>
           <rect width='370' height='80' fill='#757272' />
         </svg>

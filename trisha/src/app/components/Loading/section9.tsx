@@ -3,13 +3,10 @@
 import React, { FC } from 'react';
 import { LoadingComponentProps } from '@/app/components/Loading/types';
 
-const Section9: FC<LoadingComponentProps> = ({
-  initialColor,
-  reverseInitialColor,
-}) => {
+const Section9: FC<LoadingComponentProps> = ({ initialColor }) => {
   return (
     <div className='min-h-[803px] py-[100px] px-[90px] gap-[20px] flex items-center justify-center bg-[#757272] w-full'>
-      <div className='container flex flex-col gap-[20px]'>
+      <div className='container flex flex-col gap-[20px] slide-from-bottom'>
         <svg
           width='510'
           height='130'

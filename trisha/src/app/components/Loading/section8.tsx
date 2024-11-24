@@ -9,8 +9,8 @@ const Section8: FC<LoadingComponentProps> = ({
   reverseInitialColor,
 }) => {
   return (
-    <div className='h-[1000px] md:py-[100px] md:px-[50px] py-[70px] px-[28px] flex items-center justify-center'>
-      <div className='container flex items-center gap-[33px] md:gap-[79px] lg:gap-[10px]'>
+    <div className='min-h-[1000px] md:py-[100px] md:px-[50px] py-[70px] px-[28px] flex items-center justify-center'>
+      <div className='container flex lg:flex-row flex-col items-center gap-[33px] md:gap-[79px] lg:gap-[10px] slide-from-left'>
         <svg
           width='351'
           height='800'

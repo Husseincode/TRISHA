@@ -10,7 +10,7 @@ const Section10: FC<LoadingComponentProps> = ({
 }) => {
   return (
     <div className='py-[100px] px-[50px] gap-[52px] w-full flex items-center justify-center'>
-      <div className='container flex flex-col gap-[52px] items-center justify-center'>
+      <div className='container flex flex-col gap-[52px] items-center justify-center fade-in'>
         <svg
           width='400'
           height='75'

@@ -17,8 +17,9 @@ import Section8 from '@/app/components/Loading/section8';
 import Section9 from '@/app/components/Loading/section9';
 import Section10 from '@/app/components/Loading/section10';
 import Section11 from '@/app/components/Loading/section11';
-import Section12 from './section12';
-import Section13 from './section13';
+import Section12 from '@/app/components/Loading/section12';
+import Section13 from '@/app/components/Loading/section13';
+import Footer from '@/app/components/Loading/footer';
 
 const Loading = () => {
   const [initialColor, setInitialColor] = useState<string>('#ABA7A7');
@@ -119,6 +120,9 @@ const Loading = () => {
 
       {/**Thirteen sector */}
       <Section13 />
+
+      {/**Footer sector */}
+      <Footer />
     </section>
   );
 };
