@@ -59,6 +59,7 @@ const SectionComp = () => {
           </div>
 
           {/**View Collection Button */}
+          {/**nuild */}
           <button
             type='button'
             title='View Collection'
