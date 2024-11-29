@@ -30,17 +30,19 @@ const SectionComp = () => {
   return (
     <Fragment>
       <div
-        ref={ref}
         className={`min-h-[744px] md:min-h-[900px] ${
-          isSectionShown ? 'opacity-100' : 'opacity-0'
+          isSectionShown && 'opacity-100'
         } lg:min-h-[1226px] transition duration-500 section1BGImg w-full flex flex-col gap-[20px] items-center justify-center`}></div>
       <div
-        ref={ref}
         className={`min-h-[744px] md:min-h-[900px] absolute top-${top.toString()} mt-[630px] md:mt-[680px] lg:mt-[970px] ${
           isSectionShown && 'opacity-100'
-        } opacity-0 lg:min-h-[1226px] transition duration-500 w-full flex flex-col gap-[20px] items-center justify-center`}>
+        } lg:min-h-[1226px] transition duration-500 w-full flex flex-col gap-[20px] items-center justify-center`}>
         <div className='w-full h-[442px] flex justify-center items-center flex-col gap-[15px]'>
-          <div className='lg:min-w-[640px] w-[295px] flex flex-col items-center justify-center gap-[15px]'>
+          <div
+            ref={ref}
+            className={`lg:min-w-[640px] w-[295px] flex flex-col items-center justify-center gap-[15px] ${
+              isSectionShown && 'slide-from-left'
+            }`}>
             <span
               style={{
                 fontFamily: `'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif`,
@@ -63,7 +65,9 @@ const SectionComp = () => {
           <button
             type='button'
             title='View Collection'
-            className='lg:h-[46px] lg:w-[240px] lg:py-[12px] lg:px-[48px] gap-[10px] bg-[#008080] hover:bg-[#104b4b] text-[#FFFFFF] lg:text-[18px] leading-[22px] text-center mt-6 transition duration-500'>
+            className={`h-[46px] lg:w-[240px] py-[12px] px-[48px] gap-[10px] bg-[#008080] hover:bg-[#104b4b] text-[#FFFFFF] lg:text-[18px] leading-[22px] text-center mt-6 transition duration-500 ${
+              isSectionShown && 'slide-from-right'
+            }`}>
             View Collection
           </button>
         </div>

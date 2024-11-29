@@ -28,7 +28,7 @@ const Header = () => {
       <div className={`hidden lg:flex gap-[40px]`}>
         {NavbarData.map((item, idx: number) => (
           <Link
-            href={item.url}
+            href={'#'}
             title={item.nav}
             className='lg:text-[20px] font-normal leading-[24px]'
             key={idx}>
