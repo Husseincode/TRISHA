@@ -1,98 +1,57 @@
 /** @format */
 
 import React, { FC } from 'react';
+import { NavbarStraightLine } from '@/app/components/Loading/breadcrumbs';
 
 interface NavbarProps {
   initialColor: string;
 }
 
-const Navbar: FC<NavbarProps> = ({ initialColor }) => {
+const NavbarComponent: FC<NavbarProps> = ({ initialColor }) => {
   return (
-    <nav className='w-full flex justify-between items-center py-[23px] px-[16px] lg:py-[16px] lg:px-[69px] min-h-[102px] slide-from-top bg-[#E3E9F1]'>
-      <svg
-        width='217'
-        className='lg:w-[217px] w-[175px]'
-        height='70'
-        viewBox='0 0 217 70'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'>
-        <circle
-          cx='35'
-          cy='35'
-          r='35'
-          className='transition duration-500 slide-from-left'
-          fill={initialColor}
+    <header className='w-full flex justify-between items-center py-[23px] px-[16px] lg:py-[16px] lg:px-[69px] min-h-[102px] slide-from-top bg-[#E3E9F1]'>
+      {/**Image or Logo section */}
+      <div className='h-[70px] w-[175px] lg:w-[217px] flex items-end'>
+        <div
+          style={{ backgroundColor: initialColor }}
+          className={`w-[70px] h-[70px] rounded-full border-[3px] border-gray-400 transition-all ease-linear duration-500`}></div>
+        <div
+          style={{ backgroundColor: initialColor }}
+          className={`lg:w-[150px] w-[100px] border-[3px] border-gray-400 lg:h-[15px] h-[10px] rounded-[12px] transition duration-500`}></div>
+      </div>
+
+      {/**Navigation For Larger Devices */}
+      <div className={`hidden lg:flex gap-[40px]`}>
+        <NavbarStraightLine
+          style={{ backgroundColor: initialColor }}
+          initialColor={initialColor}
+          className='h-[25px] w-[70px] border-[3px] border-gray-400 transition duration-500'
         />
-        <rect
-          x='67'
-          y='53'
-          width='150'
-          height='15'
-          rx='7.5'
-          className='transition duration-500 slide-from-bottom'
-          fill={initialColor}
+        <NavbarStraightLine
+          style={{ backgroundColor: initialColor }}
+          initialColor={initialColor}
+          className='h-[25px] w-[90px] border-[3px] border-gray-400 transition duration-500'
         />
-      </svg>
-      <svg
-        width='576'
-        height='26'
-        viewBox='0 0 576 26'
-        fill='none'
-        className='hidden lg:inline'
-        xmlns='http://www.w3.org/2000/svg'>
-        <rect
-          y='0.75'
-          width='70'
-          height='25'
-          rx='12'
-          className='transition duration-500'
-          fill={initialColor}
+        <NavbarStraightLine
+          initialColor={initialColor}
+          style={{ backgroundColor: initialColor }}
+          className='h-[25px] w-[200px] border-[3px] border-gray-400 transition duration-500'
         />
-        <rect
-          x='132'
-          y='0.75'
-          width='90'
-          height='25'
-          rx='12'
-          className='transition duration-500'
-          fill={initialColor}
+        <NavbarStraightLine
+          style={{ backgroundColor: initialColor }}
+          initialColor={initialColor}
+          className='h-[25px] w-[90px] transition border-[3px] border-gray-400 duration-500'
         />
-        <rect
-          x='254'
-          y='0.25'
-          width='200'
-          height='25'
-          rx='12'
-          className='transition duration-500'
-          fill={initialColor}
-        />
-        <rect
-          x='486'
-          y='0.75'
-          width='90'
-          height='25'
-          rx='12'
-          className='transition duration-500'
-          fill={initialColor}
-        />
-      </svg>
-      <svg
-        className='lg:hidden w-[70px] h-[70px]'
-        width='70'
-        height='70'
-        viewBox='0 0 70 70'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'>
-        <rect
-          width='70'
-          height='70'
-          rx='12'
-          className='transition duration-500'
-          fill={initialColor}
-        />
-      </svg>
-    </nav>
+      </div>
+
+      {/**Bar for mobile devices */}
+      <div
+        style={{ backgroundColor: initialColor }}
+        className={`w-[70px] h-[70px] lg:hidden rounded-[12px] transition duration-500`}></div>
+    </header>
   );
 };
+
+const Navbar = React.memo(NavbarComponent);
 
 export default Navbar;

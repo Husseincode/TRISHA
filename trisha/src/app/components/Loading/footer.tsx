@@ -11,16 +11,16 @@ import {
 const Footer = () => {
   return (
     <div className='flex justify-center w-full min-h-[800px] bg-[#757272]'>
-      <div className='container flex flex-col slide-from-bottom'>
-        <div className='flex justify-between items-center py-[70px] px-[30px] border-[1px] border-[#ABA7A7]'>
+      <div className='container flex flex-col slide-from-bottom px-[10px]'>
+        <div className='flex justify-between flex-col md:flex-row gap-[30px] lg:gap-0 items-center py-[70px] px-[30px] border-[1px] border-[#ABA7A7]'>
           {Array.from({ length: 2 }).map((__, idx: number) => (
             <FooterComponent1 key={idx} />
           ))}
           <FooterEllipses />
         </div>
 
-        <div className='grid grid-cols-4 grid-rows-1 min-h-[365px]'>
-          <div className='h-[inherit] border-[1px] border-[#ABA7A7] px-[30px] flex items-center'>
+        <div className='lg:grid lg:grid-cols-4 lg:grid-rows-1 flex flex-col min-h-[365px]'>
+          <div className='h-[inherit] border-[1px] border-[#ABA7A7] py-[50px] lg:py-0 px-[30px] flex items-start lg:items-center'>
             <svg
               width='200'
               height='155'
@@ -64,7 +64,7 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className='flex justify-between items-center py-[70px] px-[30px] border-[1px] border-[#ABA7A7]'>
+        <div className='flex justify-between lg:flex-row flex-col items-center py-[70px] px-[30px] border-[1px] border-[#ABA7A7]'>
           {Array.from({ length: 3 }).map((__, idx: number) => (
             <FooterComponent1 key={idx} />
           ))}

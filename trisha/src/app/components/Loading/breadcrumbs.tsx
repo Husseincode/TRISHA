@@ -518,7 +518,7 @@ export const FooterComponent2 = () => {
       height='244'
       viewBox='0 0 154 244'
       fill='none'
-      className=' w-full py-[30px] flex justify-center items-center'
+      className='px-[30px] flex justify-center items-center'
       xmlns='http://www.w3.org/2000/svg'>
       <rect width='70' height='30' fill='#ABA7A7' />
       <rect width='70' height='5' transform='translate(0 40)' fill='#ABA7A7' />
@@ -649,4 +649,28 @@ export const StraightLine = ({
       />
     </svg>
   );
+};
+
+interface StraightLineProps {
+  className: string;
+  initialColor: string | undefined;
+  style?: React.CSSProperties;
+}
+
+export const NavbarStraightLine: FC<StraightLineProps> = ({
+  className,
+  initialColor,
+}) => {
+  return (
+    <div
+      style={{ backgroundColor: initialColor }}
+      className={`rounded-[12px] ${className}`}></div>
+  );
+};
+
+export const MobileHeroSectionLines: FC<StraightLineProps> = ({
+  className,
+  initialColor,
+}) => {
+  return <div className={`${className} bg-[${initialColor}]`}></div>;
 };

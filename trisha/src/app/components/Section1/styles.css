@@ -1,0 +1,8 @@
+/** @format */
+
+.section1BGImg {
+  background: url('../../../assets/section1BgImg.png');
+  background-position: center;
+  background-size: cover;
+  filter: brightness(50%);
+}

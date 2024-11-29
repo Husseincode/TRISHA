@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import '@/app/styles/styles.css';
 import Navbar from '@/app/components/Loading/navbar';
 import HeroSection from '@/app/components/Loading/hero_section';
@@ -26,26 +26,31 @@ const Loading = () => {
   const [reverseInitialColor, setReverseInitialColor] =
     useState<string>('#757272');
 
+  // Toggle initial color
+  const toggleInitialColor = useCallback(() => {
+    setInitialColor((prevColor: string) =>
+      prevColor === '#ABA7A7' ? '#757272' : '#ABA7A7'
+    );
+  }, []);
+
+  // Toggle reverse initial color
+  const toggleReverseInitialColor = useCallback(() => {
+    setReverseInitialColor((prevColor: string) =>
+      prevColor === '#757272' ? '#ABA7A7' : '#757272'
+    );
+  }, []);
+
   //useEffects
   useEffect(() => {
-    const intervalId = setTimeout(() => {
-      initialColor === '#ABA7A7'
-        ? setInitialColor('#757272')
-        : setInitialColor('#ABA7A7');
-    }, 1200);
-
-    return () => clearTimeout(intervalId);
-  }, [initialColor]);
+    const intervalId = setInterval(toggleInitialColor, 1200);
+    return () => clearInterval(intervalId);
+  }, [toggleInitialColor]);
 
   useEffect(() => {
-    const reverseIntervalId = setTimeout(() => {
-      reverseInitialColor === '#757272'
-        ? setReverseInitialColor('#ABA7A7')
-        : setReverseInitialColor('#757272');
-    }, 1200);
-
-    return () => clearTimeout(reverseIntervalId);
-  }, [reverseInitialColor]);
+    const reverseIntervalId = setInterval(toggleReverseInitialColor, 1200);
+    console.log(window); // You can remove this log for performance reasons
+    return () => clearInterval(reverseIntervalId);
+  }, [toggleReverseInitialColor]);
 
   return (
     <section className='flex flex-col justify-center items-center'>

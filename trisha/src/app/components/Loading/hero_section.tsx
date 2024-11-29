@@ -2,6 +2,7 @@
 
 import React, { FC } from 'react';
 import { LoadingComponentProps } from '@/app/components/Loading/types';
+import { MobileHeroSectionLines } from './breadcrumbs';
 
 const HeroSection: FC<LoadingComponentProps> = ({
   reverseInitialColor,
@@ -128,49 +129,16 @@ const HeroSection: FC<LoadingComponentProps> = ({
         />
       </svg>
 
-      <div className='flex flex-col justify-center items-center text-center min-h-[111px] lg:hidden slide-from-bottom'>
-        <svg
-          width='1400'
-          className='w-full'
-          height='30'
-          viewBox='0 0 1400 30'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'>
-          <rect
-            width='1400'
-            height='30'
-            className='transition duration-500'
-            fill={initialColor}
+      <div className='flex flex-col gap-[30px] justify-center items-center text-center min-h-[111px] lg:hidden slide-from-bottom'>
+        {Array.from({ length: 3 }).map((__, idx: number) => (
+          <MobileHeroSectionLines
+            key={idx}
+            initialColor={initialColor}
+            className={`h-[17px] md:h-[36px] w-[290px] transition duration-500 ${
+              idx === 2 && 'w-[255px] md:hidden'
+            } ${idx === 0 && 'md:w-[650px]'} ${idx === 1 && 'md:w-[600px]'}`}
           />
-        </svg>
-        <svg
-          width='1400'
-          className='w-full'
-          height='30'
-          viewBox='0 0 1400 30'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'>
-          <rect
-            width='1400'
-            height='30'
-            className='transition duration-500'
-            fill={initialColor}
-          />
-        </svg>
-        <svg
-          width='1000'
-          className='w-full md:hidden'
-          height='30'
-          viewBox='0 0 1400 30'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'>
-          <rect
-            width='1000'
-            height='30'
-            className='transition duration-500'
-            fill={initialColor}
-          />
-        </svg>
+        ))}
       </div>
 
       <svg

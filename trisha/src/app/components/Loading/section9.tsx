@@ -5,11 +5,12 @@ import { LoadingComponentProps } from '@/app/components/Loading/types';
 
 const Section9: FC<LoadingComponentProps> = ({ initialColor }) => {
   return (
-    <div className='min-h-[803px] py-[100px] px-[90px] gap-[20px] flex items-center justify-center bg-[#757272] w-full'>
+    <div className='min-h-[803px] py-[100px] px-[90px] gap-[20px] flex md:items-center md:justify-center bg-[#757272] w-full'>
       <div className='container flex flex-col gap-[20px] slide-from-bottom'>
         <svg
           width='510'
           height='130'
+          className='w-[250px] lg:w-[510px]'
           viewBox='0 0 510 130'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -34,6 +35,7 @@ const Section9: FC<LoadingComponentProps> = ({ initialColor }) => {
             height='410'
             viewBox='0 0 500 410'
             fill='none'
+            className='w-[250px] md:w-[500px]'
             xmlns='http://www.w3.org/2000/svg'>
             <circle cx='114' cy='70' r='70' fill='#ABA7A7' />
             <rect
@@ -69,6 +71,7 @@ const Section9: FC<LoadingComponentProps> = ({ initialColor }) => {
             height='410'
             viewBox='0 0 500 410'
             fill='none'
+            className='w-[250px] md:w-[500px]'
             xmlns='http://www.w3.org/2000/svg'>
             <circle cx='114' cy='70' r='70' fill='#ABA7A7' />
             <rect
