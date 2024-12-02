@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import React from 'react';
 import TrishaLogo from '@/assets/logo.png';
-import { NavbarData } from './NavbarData';
+import { NavbarData } from '@/app/components/Header/data/NavbarData';
 import Link from 'next/link';
 import BarIcon from '@/app/components/Header/svgs/bar.svg';
 

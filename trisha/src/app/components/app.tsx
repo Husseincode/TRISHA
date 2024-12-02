@@ -6,6 +6,7 @@ import Loading from '@/app/components/Loading';
 import Header from '@/app/components/Header';
 import Hero from '@/app/components/Hero';
 import SectionComp from '@/app/components/Section1';
+import SectionComp2 from './Section2';
 
 const EntryPoint = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -25,6 +26,7 @@ const EntryPoint = () => {
       <Header />
       <Hero />
       <SectionComp />
+      <SectionComp2 />
     </section>
   );
 };

@@ -4,18 +4,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import './styles.css';
+import ViewCollectionButton from '../Button/viewCollection';
 
 const SectionComp = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLSpanElement>(null);
   const [isSectionShown, setIsSectionShown] = useState<boolean>(false);
-  const [top, setTop] = useState<any>(0);
 
   const makeSectionVisible = () => {
     const getTop: number | undefined | any =
       ref.current?.getBoundingClientRect().top;
     const height = window.innerHeight;
 
-    setTop(height);
     setIsSectionShown(getTop < height);
   };
 
@@ -32,22 +31,16 @@ const SectionComp = () => {
       <div
         className={`min-h-[744px] md:min-h-[900px] ${
           isSectionShown && 'opacity-100'
-        } lg:min-h-[1226px] transition duration-500 section1BGImg w-full flex flex-col gap-[20px] items-center justify-center`}></div>
-      <div
-        className={`min-h-[744px] md:min-h-[900px] absolute top-${top.toString()} mt-[630px] md:mt-[680px] lg:mt-[970px] ${
-          isSectionShown && 'opacity-100'
-        } lg:min-h-[1226px] transition duration-500 w-full flex flex-col gap-[20px] items-center justify-center`}>
+        } lg:min-h-[1226px] transition duration-500 section1BGImg w-full flex flex-col gap-[20px] items-center justify-center`}>
+        {' '}
         <div className='w-full h-[442px] flex justify-center items-center flex-col gap-[15px]'>
           <div
-            ref={ref}
             className={`lg:min-w-[640px] w-[295px] flex flex-col items-center justify-center gap-[15px] ${
               isSectionShown && 'slide-from-left'
             }`}>
             <span
-              style={{
-                fontFamily: `'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif`,
-              }}
-              className='lg:text-[32px] md:text-[30px] text-[24px] lg:leading-[32px] md:leading-[30px] leading-[24px] text-center font-normal text-[#FFFFFF]'>
+              ref={ref}
+              className='font-inter lg:text-[32px] md:text-[30px] text-[24px] lg:leading-[32px] md:leading-[30px] leading-[24px] text-center font-normal text-[#FFFFFF]'>
               Affordable price
             </span>
             <h2 className='lg:text-[70px] md:text-[50px] text-[36px] lg:leading-[85px] md:leading-[61px] leading-[44px] text-center text-[#008080] font-bold'>
@@ -62,16 +55,18 @@ const SectionComp = () => {
 
           {/**View Collection Button */}
           {/**nuild */}
-          <button
-            type='button'
-            title='View Collection'
-            className={`h-[46px] lg:w-[240px] py-[12px] px-[48px] gap-[10px] bg-[#008080] hover:bg-[#104b4b] text-[#FFFFFF] lg:text-[18px] leading-[22px] text-center mt-6 transition duration-500 ${
-              isSectionShown && 'slide-from-right'
-            }`}>
-            View Collection
-          </button>
+          <ViewCollectionButton
+            isVisible={isSectionShown}
+            animationStyle='slide-from-right'
+          />
         </div>
       </div>
+      {/* <div
+        className={`min-h-[744px] md:min-h-[900px] absolute border-2 border-black top-${top.toString()} -mt-[150px] md:mt-[680px] lg:mt-[170px] ${
+          isSectionShown && 'opacity-100'
+        } lg:min-h-[1226px] transition duration-500 w-full flex flex-col gap-[20px] items-center justify-center`}>
+       
+      </div> */}
     </Fragment>
   );
 };

@@ -47,7 +47,7 @@ const NavbarComponent: FC<NavbarProps> = ({ initialColor }) => {
       {/**Bar for mobile devices */}
       <div
         style={{ backgroundColor: initialColor }}
-        className={`w-[70px] h-[70px] lg:hidden rounded-[12px] transition duration-500`}></div>
+        className={`w-[70px] h-[70px] lg:hidden rounded-[12px] transition duration-500 border-[3px] border-gray-400`}></div>
     </header>
   );
 };
