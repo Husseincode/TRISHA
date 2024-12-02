@@ -26,12 +26,12 @@ const ViewCollectionButton = ({
   return (
     <button
       type={type ? type : 'button'}
-      title={title ? title : 'View Collection'}
+      title={title ? title : 'View Collections'}
       onClick={isDisabled ? undefined : onClick}
-      className={`h-[46px] lg:w-[240px] py-[12px] px-[48px] gap-[10px] bg-[#008080] hover:bg-[#104b4b] text-[#FFFFFF] lg:text-[18px] leading-[22px] text-center mt-6 transition duration-500 ${
+      className={`h-[46px] lg:w-[240px] py-[12px] px-[48px] gap-[10px] bg-[#008080] hover:bg-[#104b4b] text-[#FFFFFF] lg:text-[18px] leading-[22px] text-center mt-6 transition duration-500 font-medium ${
         isVisible && animationStyle
       }`}>
-      {text ? text : 'View Collection'}
+      {text ? text : 'View Collections'}
     </button>
   );
 };

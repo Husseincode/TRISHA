@@ -8,6 +8,7 @@ import Image from 'next/image';
 import ViewCollectionButton from '../Button/viewCollection';
 import img1 from '@/assets/Trisha/Trisha/img-1.jpg';
 import img2 from '@/assets/Trisha/Trisha/img-2.jpg';
+import './style.css';
 
 const SectionComp2 = () => {
   const cardRef1 = useRef<HTMLDivElement>(null);
@@ -71,7 +72,7 @@ const SectionComp2 = () => {
   return (
     <div className='min-h-[766px] py-[50px] md:py-[100px] gap-[10px] flex items-center justify-center'>
       <div
-        className={`flex flex-col lg:flex-row gap-[60px] lg:gap-[10px] min-h-[566px]`}>
+        className={`flex flex-col lg:flex-row gap-[60px] lg:gap-[10px] min-h-[566px] px-[20px] lg:px-0`}>
         {/* <BreadCrumb
         initialColor={initialColor}
         reverseInitialColor={reverseInitialColor}
@@ -104,24 +105,24 @@ const SectionComp2 = () => {
         {/**Card 2 */}
         <div
           ref={cardRef2}
-          className={`h-[523px] lg:w-[400px] w-full flex flex-col items-center gap-[25px] px-[40px] ${
+          className={`h-[566px] card2Bg lg:w-[400px] w-full flex flex-col items-center justify-center gap-[25px] px-[40px] border-[13px] border-gray-500 ${
             isCardRef2Shown && 'slide-from-right'
           }`}>
-          <Image
+          {/* <Image
             src={img2}
             alt=''
             width={256}
             height={287}
             className='lg:h-[287px] w-full'
-          />
+          /> */}
           <h2 className='font-bold lg:text-[48px] lg:leading-[58px] text-center text-[#008080]'>
-            Men wigs
+            Women wigs
           </h2>
-          <span className='font-inter font-normal text-[15px] leading-[18px] text-center text-[#212529]'>
-            men&apos;s wigs are hairpieces to cover thining hair, baldness, or
-            for fashion purposes.They are used for convenience, costume
-            purposes, or to restore confidence due to hair loss caused by
-            medical conditions like alopecia or chemotherapy.
+          <span className='font-inter font-normal text-[15px] leading-[18px] text-center text-[#FFFFFF]'>
+            Wigs for women are artificial or natural hairpieces worn to cover
+            the head, often used for fashion, medical reasons (such as hair
+            loss), or convenience. They come in various styles, lengths, and
+            colors, made from synthetic fibers or human hair.
           </span>
           <ViewCollectionButton />
         </div>
@@ -133,20 +134,20 @@ const SectionComp2 = () => {
             isCardRef3Shown && 'slide-from-left'
           }`}>
           <Image
-            src={img1}
+            src={img2}
             alt=''
             width={256}
             height={287}
             className='lg:h-[287px] w-full'
           />
           <h2 className='font-bold lg:text-[48px] lg:leading-[58px] text-center text-[#008080]'>
-            Men wigs
+            Accessories
           </h2>
           <span className='font-inter font-normal text-[15px] leading-[18px] text-center text-[#212529]'>
-            men&apos;s wigs are hairpieces to cover thining hair, baldness, or
-            for fashion purposes.They are used for convenience, costume
-            purposes, or to restore confidence due to hair loss caused by
-            medical conditions like alopecia or chemotherapy.
+            Hair accessories for women are both functional and decorative,
+            designed to style, secure, or enhance the appearance of hair. These
+            accessories can complement various hair textures and styles, adding
+            both elegance and practicality to one&apos;s look.
           </span>
           <ViewCollectionButton />
         </div>
