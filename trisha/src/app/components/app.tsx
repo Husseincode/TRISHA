@@ -7,6 +7,7 @@ import Header from '@/app/components/Header';
 import Hero from '@/app/components/Hero';
 import SectionComp from '@/app/components/Section1';
 import SectionComp2 from './Section2';
+import SectionComp3 from './Section3';
 
 const EntryPoint = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -22,11 +23,12 @@ const EntryPoint = () => {
 
   if (isLoading) return <Loading />;
   return (
-    <section className='w-full flex items-center justify-center flex-col'>
+    <section className='w-full flex items-center justify-center flex-col min-h-[initial]'>
       <Header />
       <Hero />
       <SectionComp />
       <SectionComp2 />
+      <SectionComp3 />
     </section>
   );
 };
