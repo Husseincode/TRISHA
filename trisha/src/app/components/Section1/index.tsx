@@ -33,7 +33,7 @@ const SectionComp = () => {
           isSectionShown && 'opacity-100'
         } lg:min-h-[1226px] transition duration-500 section1BGImg w-full flex flex-col gap-[20px] items-center justify-center`}>
         {' '}
-        <div className='w-full h-[442px] flex justify-center items-center flex-col gap-[15px]'>
+        <div className='w-full h-[442px] flex justify-center items-center flex-col gap-[15px] overflow-hidden'>
           <div
             className={`lg:min-w-[640px] md:w-[569px] w-[295px] flex flex-col items-center justify-center gap-[15px] ${
               isSectionShown && 'slide-from-left'

@@ -72,7 +72,7 @@ const SectionComp2 = () => {
   return (
     <div className='min-h-[766px] py-[50px] md:py-[100px] gap-[10px] flex items-center justify-center'>
       <div
-        className={`flex flex-col lg:flex-row gap-[60px] lg:gap-[10px] min-h-[566px] px-[20px] lg:px-0`}>
+        className={`flex flex-col lg:flex-row gap-[60px] lg:gap-[10px] min-h-[566px] px-[20px] lg:px-0 overflow-hidden`}>
         {/* <BreadCrumb
         initialColor={initialColor}
         reverseInitialColor={reverseInitialColor}

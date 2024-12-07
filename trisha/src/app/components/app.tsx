@@ -8,6 +8,7 @@ import Hero from '@/app/components/Hero';
 import SectionComp from '@/app/components/Section1';
 import SectionComp2 from './Section2';
 import SectionComp3 from './Section3';
+//import SectionComp4 from './Section4';
 
 const EntryPoint = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -29,6 +30,7 @@ const EntryPoint = () => {
       <SectionComp />
       <SectionComp2 />
       <SectionComp3 />
+      {/* <SectionComp4 /> */}
     </section>
   );
 };
