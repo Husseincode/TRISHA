@@ -2,6 +2,7 @@
 
 import React, { FC } from 'react';
 import { NavbarStraightLine } from '@/app/components/Loading/breadcrumbs';
+import './styles.css';
 
 interface NavbarProps {
   initialColor: string;

@@ -14,6 +14,7 @@ const page = () => {
       <div className='container flex gap-[30px]'>
         {Array.from({ length: 1 }).map((__, idx: number) => (
           <Card
+            text='Sample'
             key={idx}
             img={sampleImg}
             isDisabled={false}

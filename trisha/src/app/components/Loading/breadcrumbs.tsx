@@ -671,6 +671,9 @@ export const NavbarStraightLine: FC<StraightLineProps> = ({
 export const MobileHeroSectionLines: FC<StraightLineProps> = ({
   className,
   initialColor,
+  style,
 }) => {
-  return <div className={`${className} bg-[${initialColor}]`}></div>;
+  return (
+    <div style={style} className={`${className} bg-[${initialColor}]`}></div>
+  );
 };

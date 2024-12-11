@@ -133,6 +133,7 @@ const HeroSection: FC<LoadingComponentProps> = ({
         {Array.from({ length: 3 }).map((__, idx: number) => (
           <MobileHeroSectionLines
             key={idx}
+            style={{ background: initialColor }}
             initialColor={initialColor}
             className={`h-[17px] md:h-[36px] w-[290px] transition duration-500 ${
               idx === 2 && 'w-[255px] md:hidden'

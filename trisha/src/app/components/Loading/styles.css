@@ -1,0 +1,20 @@
+/** @format */
+
+.loading {
+  animation: changeColor 2s ease infinite;
+  background: #aba7a7;
+}
+
+@keyframes changeColor {
+  0% {
+    background: linear-gradient(45deg, #aba7a7, #757272, #3c3c3c);
+  }
+  50% {
+    background: linear-gradient(90deg, #aba7a7, #757272);
+    background-position: 50% 100%;
+  }
+  100% {
+    background: #3c3c3c;
+    background-position: 0% 50%;
+  }
+}

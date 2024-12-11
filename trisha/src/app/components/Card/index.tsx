@@ -17,6 +17,7 @@ interface CardProps {
     img2: any;
     img3: any;
   };
+  text: string;
 }
 
 const Card: FC<CardProps> = ({
@@ -27,11 +28,12 @@ const Card: FC<CardProps> = ({
   price,
   outdatedPrice,
   subImages: { img1, img2, img3 },
+  text,
 }) => {
   return (
     <div
       onClick={onClick}
-      className={`lg:min-h-[680px] lg:w-[427px] border-[9px] py-[40px] px-[20px] gap-[20px] border-[#DAE3EB] flex flex-col ${className}`}>
+      className={`lg:min-h-[680px] w-full lg:w-1/3 border-[9px] py-[40px] px-[20px] gap-[20px] border-[#DAE3EB] flex flex-col ${className}`}>
       <div className='w-full lg:h-[446px] flex flex-col gap-[2px]'>
         <button
           type='button'
@@ -48,17 +50,17 @@ const Card: FC<CardProps> = ({
       </div>
       <div className='lg:h-[34px] w-full flex justify-center items-center'>
         <span className='font-normal lg:text-[20px] lg:leading-[33px] text-center text-[#008080]'>
-          Blond Hair wig{' '}
+          {text}
         </span>
       </div>
       <div className='lg:h-[24px] w-full flex items-center justify-center'>
-        <span>
+        <span className='drop-shadow-md '>
           ${' '}
           <span className='font-normal lg:text-[20px] leading-[24px] text-[#212529]'>
             {price}
           </span>{' '}
           <span className='line-through font-[300px] text-[12px] leading-[14px] text-[#535B64]'>
-            {outdatedPrice}
+            ${outdatedPrice}
           </span>
         </span>
       </div>
