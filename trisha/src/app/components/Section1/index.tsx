@@ -2,30 +2,14 @@
 
 'use client';
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { Fragment, useEffect, useRef, useState } from 'react';
+import React, { Fragment, useRef } from 'react';
 import './styles.css';
 import ViewCollectionButton from '../Button/viewCollection';
+import { useVisibility } from '../Ref/ref';
 
 const SectionComp = () => {
   const ref = useRef<HTMLSpanElement>(null);
-  const [isSectionShown, setIsSectionShown] = useState<boolean>(false);
-
-  const makeSectionVisible = () => {
-    const getTop: number | undefined | any =
-      ref.current?.getBoundingClientRect().top;
-    const height = window.innerHeight;
-
-    setIsSectionShown(getTop < height);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', makeSectionVisible);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', makeSectionVisible);
-    };
-  }, []);
+  const isSectionShown = useVisibility(ref);
   return (
     <Fragment>
       <div
@@ -46,7 +30,7 @@ const SectionComp = () => {
             <h2 className='lg:text-[70px] md:text-[50px] text-[36px] lg:leading-[85px] md:leading-[61px] leading-[44px] text-center text-[#008080] font-bold'>
               Perfect Style in wigs
             </h2>
-            <span className='lg:text-[20px] md:text-[15px] text-[12px] lg:leading-[24px] md:leading-[18px] leading-[15px] font-normal text-center text-[#FFFFFF]'>
+            <span className='lg:text-[20px] text-base lg:leading-[24px] leading-[20px] font-normal text-center text-[#FFFFFF]'>
               Bring the freedom of multiple hairstyles and a completely natural
               look. High-quality and perfect fit 0.03 mm ultra-thin skin health
               systems without side effects. Enhance your beauty

@@ -28,7 +28,7 @@ export const data = [
   },
   {
     showImg: sampleImg3,
-    images: { img1: subImg1, img2: subImg2, img3: subImg3 },
+    images: { img1: subImg5, img2: subImg3, img3: subImg4 },
     percentOff: 15,
     price: 6.78,
     outdatedPrice: '8.00',

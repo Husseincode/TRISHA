@@ -1,0 +1,42 @@
+/** @format */
+
+.image {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 300px;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.slides {
+  display: flex;
+  width: calc(100%);
+  animation: slide 12s infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-50%);
+  }
+  /* 50% {
+    transform: translateX(-100%);
+  }
+  75% {
+    transform: translateX(-100%);
+  } */
+  100% {
+    transform: translateX(0);
+  }
+}

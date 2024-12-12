@@ -2,38 +2,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import './style.css';
 import Button from '@/app/components/Button/button';
 import '@/app/styles/styles.css';
+import { useVisibility } from '../Ref/ref';
 
 const SectionComp3 = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isSectionShown, setIsSectionShown] = useState<boolean>(false);
-
-  const makeSectionVisible = () => {
-    const getTop: number | undefined | any =
-      ref.current?.getBoundingClientRect().top;
-    const height = window.innerHeight;
-
-    setIsSectionShown(getTop < height);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', makeSectionVisible);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', makeSectionVisible);
-    };
-  }, []);
+  const isSectionShown = useVisibility(ref);
   return (
     <div
       className={`min-h-[600px] lg:py-[75px] lg:px-[100px] md:px-[75px] md:py-[120px] py-[30px] px-[50px] bg-[#757272] Comp3BGStyle w-full flex flex-col gap-[20px] items-center justify-center mt-10 overflow-hidden`}>
       <div
         ref={ref}
         className={`w-full h-[349px] gap-[26px] flex flex-col items-center justify-center ${
-          isSectionShown && 'slide-from-bottom'
+          isSectionShown && 'slide-from-right'
         }`}>
         <span className='font-normal lg:text-[32px] md:text-[30px] text-[24px] lg:leading-[32px] md:leading-[30px] leading-[29px] text-center text-white'>
           Book your first wig
@@ -41,7 +25,7 @@ const SectionComp3 = () => {
         <h2 className='font-inter font-bold lg:leading-[85px] md:leading-[61px] leading-[44px] lg:text-[70px] md:text-[50px] text-[36px] text-center text-[#008080]'>
           Save Up To 40% off
         </h2>
-        <span className='font-normal lg:text-[20px] md:text-[15px] text-[12px] lg:leading-[24px] md:leading-[18px] leading-[14px] text-center text-white'>
+        <span className='font-normal lg:text-[20px] text-base lg:leading-[24px] md:leading-[18px] leading-[14px] text-center text-white'>
           Hot deal! Hurry discover your dream hair from our collections. And
           create many unique and innovative style for our hair at unbelievable
           40% off on your first wigs. Quality wigs at affordable price in the

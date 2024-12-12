@@ -18,6 +18,8 @@ interface CardProps {
     img3: any;
   };
   text: string;
+  title?: string;
+  ref?: React.RefObject<HTMLDivElement>;
 }
 
 const Card: FC<CardProps> = ({
@@ -29,11 +31,15 @@ const Card: FC<CardProps> = ({
   outdatedPrice,
   subImages: { img1, img2, img3 },
   text,
+  title,
+  ref,
 }) => {
   return (
     <div
+      title={title}
+      ref={ref}
       onClick={onClick}
-      className={`lg:min-h-[680px] w-full lg:w-1/3 border-[9px] py-[40px] px-[20px] gap-[20px] border-[#DAE3EB] flex flex-col ${className}`}>
+      className={`lg:min-h-[680px] cursor-pointer w-full lg:w-1/3 border-[9px] hover:border-[1px] py-[40px] px-[20px] gap-[20px] border-[#DAE3EB] flex flex-col transition-all duration-500 ${className}`}>
       <div className='w-full lg:h-[446px] flex flex-col gap-[2px]'>
         <button
           type='button'

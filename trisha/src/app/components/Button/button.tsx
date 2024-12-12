@@ -10,6 +10,7 @@ interface ButtonProps {
   className?: string;
   style?: React.CSSProperties;
   id?: string | undefined;
+  ref?: React.RefObject<HTMLButtonElement>;
 }
 const Button: FC<ButtonProps> = ({
   text,
@@ -19,9 +20,11 @@ const Button: FC<ButtonProps> = ({
   className,
   style,
   id,
+  ref,
 }) => {
   return (
     <button
+      ref={ref}
       type='button'
       id={id}
       style={style}
