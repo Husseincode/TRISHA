@@ -50,7 +50,7 @@ const Card: FC<CardProps> = ({
           src={img}
           height={416}
           width={367}
-          className='lg:h-[416px] lg:w-[367px]'
+          className='lg:h-[416px] w-full lg:w-[367px]'
           alt=''
         />
       </div>

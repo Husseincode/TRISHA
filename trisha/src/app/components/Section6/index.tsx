@@ -6,7 +6,7 @@ import { images } from './data';
 
 const SectionComp6 = () => {
   return (
-    <div className='w-full flex justify-center items-center bg-[#757272] overflow-scroll scrollbar-hidden'>
+    <div className='w-full flex justify-center items-center bg-[#272626] overflow-scroll scrollbar-hidden'>
       <div className='slider'>
         <div className='flex slides'>
           {images.map((img, idx: number) => (
