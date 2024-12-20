@@ -27,15 +27,13 @@
   0% {
     transform: translateX(0);
   }
-  75% {
-    transform: translateX(-50%);
-  }
-  /* 50% {
-    transform: translateX(-100%);
+  50% {
+    transform: translateX(-10%);
   }
   75% {
-    transform: translateX(-100%);
-  } */
+    transform: translateX(-20%);
+  }
+
   100% {
     transform: translateX(0);
   }

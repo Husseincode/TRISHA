@@ -12,6 +12,9 @@ import SectionComp4 from './Section4';
 import Section5Comp from './Section5';
 import SectionComp6 from './Section6';
 import SectionComp7 from './Section7';
+import { SectionComp8 } from './Section8';
+import Section9Comp from './Section9';
+import SectionComp10 from './Section10';
 
 const EntryPoint = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -37,6 +40,9 @@ const EntryPoint = () => {
       <Section5Comp />
       <SectionComp6 />
       <SectionComp7 />
+      <SectionComp8 />
+      <Section9Comp />
+      <SectionComp10 />
     </section>
   );
 };

@@ -20,6 +20,9 @@ interface CardProps {
   text: string;
   title?: string;
   ref?: React.RefObject<HTMLDivElement>;
+  wholeHeight?: string;
+  imageHeight?: string;
+  imageContainer?: string;
 }
 
 const Card: FC<CardProps> = ({
@@ -33,14 +36,20 @@ const Card: FC<CardProps> = ({
   text,
   title,
   ref,
+  wholeHeight,
+  imageHeight,
+  imageContainer,
 }) => {
+  {
+    /**wholeHeight:lg:min-h-[680px] imageContainer:lg:h-[446px] imageHeight:lg:h-[416px] */
+  }
   return (
     <div
       title={title}
       ref={ref}
       onClick={onClick}
-      className={`lg:min-h-[680px] cursor-pointer w-full lg:w-1/3 border-[9px] hover:border-[1px] py-[40px] px-[20px] gap-[20px] border-[#DAE3EB] flex flex-col transition-all duration-500 ${className}`}>
-      <div className='w-full lg:h-[446px] flex flex-col gap-[2px]'>
+      className={`${wholeHeight} cursor-pointer w-full border-[9px] hover:border-[1px] py-[40px] px-[20px] gap-[20px] border-[#DAE3EB] flex flex-col transition-all duration-500 ${className}`}>
+      <div className={`w-full ${imageContainer} flex flex-col gap-[2px]`}>
         <button
           type='button'
           className='h-[28px] w-fit text-white py-[5px] px-[10px] gap-[10px] bg-[#008080] font-medium text-[15px] leading-[18px] text-center'>
@@ -50,7 +59,7 @@ const Card: FC<CardProps> = ({
           src={img}
           height={416}
           width={367}
-          className='lg:h-[416px] w-full lg:w-[367px]'
+          className={`${imageHeight} w-full lg:w-[367px]`}
           alt=''
         />
       </div>

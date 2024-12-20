@@ -7,7 +7,7 @@ import subImg1 from '@/assets/Trisha/Trisha/product1.jpg';
 import subImg2 from '@/assets/Trisha/Trisha/product7.jpg';
 import subImg3 from '@/assets/Trisha/Trisha/product5.jpg';
 import subImg4 from '@/assets/Trisha/Trisha/product8.jpg';
-import subImg5 from '@/assets/Trisha/Trisha/product9_d296510b-cd3b-45ad-9f09-9ac6326fcb1c.jpg';
+import subImg5 from '@/assets/Trisha/Trisha/longyHair.jpg';
 
 export const data = [
   {
