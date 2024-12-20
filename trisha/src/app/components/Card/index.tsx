@@ -1,8 +1,9 @@
 /** @format */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import Image from 'next/image';
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 interface CardProps {
   className?: string;
@@ -40,26 +41,59 @@ const Card: FC<CardProps> = ({
   imageHeight,
   imageContainer,
 }) => {
+  const [currentImg, setCurrentImg] = useState(img);
+  const [transitionTracker, setTransitionTracker] = useState<boolean>(false);
+  const [imgsArr, setImgsArr] = useState([img1, img2, img3]);
+  const [index, setIndex] = useState<number>(0);
   {
     /**wholeHeight:lg:min-h-[680px] imageContainer:lg:h-[446px] imageHeight:lg:h-[416px] */
   }
+
+  useEffect(() => {
+    const changeImage = () => {
+      const max = imgsArr.length - 1;
+      setIndex((prevIndex: number) => {
+        return prevIndex + 1;
+      });
+      if (index === max) {
+        setIndex(0);
+        setTransitionTracker(false);
+      }
+      //console.log(index);
+      setCurrentImg(imgsArr[index]);
+      setTransitionTracker(true);
+      setTimeout(() => {
+        setTransitionTracker(false);
+      }, 1000);
+    };
+    const intervalID = setInterval(changeImage, 5000);
+    return () => clearInterval(intervalID);
+  }, [index]);
+
   return (
     <div
       title={title}
       ref={ref}
       onClick={onClick}
       className={`${wholeHeight} cursor-pointer w-full border-[9px] hover:border-[1px] py-[40px] px-[20px] gap-[20px] border-[#DAE3EB] flex flex-col transition-all duration-500 ${className}`}>
-      <div className={`w-full ${imageContainer} flex flex-col gap-[2px]`}>
+      <div
+        className={`w-full ${imageContainer} flex flex-col gap-[2px] overflow-hidden`}>
         <button
           type='button'
           className='h-[28px] w-fit text-white py-[5px] px-[10px] gap-[10px] bg-[#008080] font-medium text-[15px] leading-[18px] text-center'>
           OFF {percentOff}%
         </button>
         <Image
-          src={img}
+          src={currentImg}
           height={416}
           width={367}
-          className={`${imageHeight} w-full lg:w-[367px]`}
+          style={{
+            transitionBehavior: 'allow-discrete',
+            transition: 'ease-in-out',
+          }}
+          className={`${imageHeight} ${
+            transitionTracker && 'slide-from-right'
+          } w-full transition-all duration-500 lg:w-[367px]`}
           alt=''
         />
       </div>
@@ -85,6 +119,9 @@ const Card: FC<CardProps> = ({
             <Image
               src={img1}
               alt=''
+              onClick={() => {
+                setCurrentImg(img1);
+              }}
               className='w-[36px] h-[36px] rounded-full border-[1px] border-[#DAE3EB]'
             />
           </div>
@@ -93,6 +130,9 @@ const Card: FC<CardProps> = ({
             <Image
               src={img2}
               alt=''
+              onClick={() => {
+                setCurrentImg(img2);
+              }}
               className='w-[36px] h-[36px] rounded-full border-[1px] border-red-600'
             />
           </div>
@@ -101,6 +141,9 @@ const Card: FC<CardProps> = ({
             <Image
               src={img3}
               alt=''
+              onClick={() => {
+                setCurrentImg(img3);
+              }}
               className='w-[36px] h-[36px] rounded-full border-[1px] border-zinc-800'
             />
           </div>
