@@ -15,7 +15,7 @@ export const SectionComp8 = () => {
   const isDivVisible = useVisibility(divRef);
 
   return (
-    <div className='seccomp8BG min-h-[645px] py-[100px] px-[70px] md:px-[90px] gap-[20px] flex md:items-center md:justify-center mt-[60px] bg-[#757272] w-full'>
+    <div className='seccomp8BG min-h-[645px] py-[100px] px-[30px] md:px-[90px] gap-[20px] flex md:items-center md:justify-center mt-[60px] bg-[#757272] w-full'>
       <div className='container flex flex-col gap-[55px] slide-from-bottom'>
         <div className='flex flex-col gap-[20px] overflow-hidden'>
           <span

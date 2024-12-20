@@ -6,7 +6,7 @@ import { data } from './data';
 
 const Section9Comp = () => {
   return (
-    <div className='py-[100px] px-[50px] gap-[52px] w-full flex items-center justify-center'>
+    <div className='py-[100px] px-[30px] md:px-[50px] gap-[52px] w-full flex items-center justify-center'>
       <div className='container flex flex-col gap-[52px] items-center justify-center fade-in'>
         <h2 className='lg:font-extrabold lg:text-[60px] md:text-[50px] md:leading-[60px] text-[40px] leading-[48px] lg:leading-[72px] text-center text-[#008080]'>
           New&nbsp;<span className='lg:font-bold'>Arrivals</span>
