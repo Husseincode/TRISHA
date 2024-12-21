@@ -80,7 +80,7 @@ const SectionComp4 = () => {
       </div>
 
       {/**Can be modified later but now fixed as it is not fetching any data */}
-      <div className=' flex justify-center items-center px-[50px]'>
+      <div className=' flex justify-center items-center px-[30px]'>
         <div className='flex md:grid md:grid-cols-2 lg:flex lg:flex-row flex-rap flex-col md:gap-[20px] gap-[40px] transition duration-500'>
           {data.map((items: any, idx: number) => (
             <Card

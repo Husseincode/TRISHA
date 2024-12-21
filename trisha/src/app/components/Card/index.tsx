@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React, { FC, useEffect, useState } from 'react';
 
 interface CardProps {
@@ -14,9 +14,9 @@ interface CardProps {
   price: number | string;
   outdatedPrice: number | string;
   subImages: {
-    img1: any;
-    img2: any;
-    img3: any;
+    img1: StaticImageData | string;
+    img2: StaticImageData | string;
+    img3: StaticImageData | string;
   };
   text: string;
   title?: string;
@@ -45,13 +45,50 @@ const Card: FC<CardProps> = ({
   const [transitionTracker, setTransitionTracker] = useState<boolean>(false);
   const [imgsArr, setImgsArr] = useState([img1, img2, img3]);
   const [index, setIndex] = useState<number>(0);
-  {
-    /**wholeHeight:lg:min-h-[680px] imageContainer:lg:h-[446px] imageHeight:lg:h-[416px] */
-  }
+  const [swipes, setSwipes] = useState({
+    isSwipeLeft: false,
+    isSwipeRight: false,
+  });
+  const [swipeData, setSwipeData] = useState({
+    startX: 0,
+    endX: 0,
+  });
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    const startX = event.touches[0].clientX;
+    setSwipeData({ startX, endX: 0 });
+    setSwipes({
+      isSwipeLeft: false,
+      isSwipeRight: false,
+    });
+  };
+
+  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    const endX = event.touches[0].clientX;
+    setSwipeData({ ...swipeData, endX });
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    const { startX, endX } = swipeData;
+    const deltaX = endX - startX;
+
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX > 0) {
+        setSwipes({ isSwipeLeft: false, isSwipeRight: true });
+        console.log('Swiped Right');
+      } else {
+        setSwipes({ isSwipeLeft: true, isSwipeRight: false });
+        console.log('Swiped Left');
+      }
+    } else {
+      console.log('Swipe not detected or too short');
+    }
+  };
 
   useEffect(() => {
     const changeImage = () => {
       const max = imgsArr.length - 1;
+
       setIndex((prevIndex: number) => {
         return prevIndex + 1;
       });
@@ -70,6 +107,23 @@ const Card: FC<CardProps> = ({
     return () => clearInterval(intervalID);
   }, [index]);
 
+  useEffect(() => {
+    const max = imgsArr.length;
+
+    if (swipes.isSwipeLeft) {
+      setIndex((prevIndex: number) => prevIndex + 1);
+      setCurrentImg(imgsArr[index]);
+    }
+    if (swipes.isSwipeRight) {
+      setIndex((prevIndex: number) => prevIndex - 1);
+      setCurrentImg(imgsArr[index]);
+    }
+    if (index === max) {
+      setIndex(0);
+      setTransitionTracker(false);
+    }
+  }, [swipes]);
+
   return (
     <div
       title={title}
@@ -77,6 +131,9 @@ const Card: FC<CardProps> = ({
       onClick={onClick}
       className={`${wholeHeight} cursor-pointer w-full border-[9px] hover:border-[1px] py-[40px] px-[20px] gap-[20px] border-[#DAE3EB] flex flex-col transition-all duration-500 ${className}`}>
       <div
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         className={`w-full ${imageContainer} flex flex-col gap-[2px] overflow-hidden`}>
         <button
           type='button'

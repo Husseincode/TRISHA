@@ -16,22 +16,22 @@ const SectionComp10 = () => {
     },
     validationSchema,
     onSubmit: async (values) => {
-      // try {
-      //  const res = await fetch()
-      // } catch (err) {
-      //  console.log(err)
-      // }
       console.log(values);
     },
   });
 
   useEffect(() => {
-    toast.error(formik.errors.email as string, {
-      style: {
-        background: '#000000',
-        color: '#ffffff',
-      },
-    });
+    const handleError = () => {
+      if (formik.errors.email) {
+        toast.error(formik.errors.email as string, {
+          style: {
+            background: '#000000',
+            color: '#ffffff',
+          },
+        });
+      }
+    };
+    handleError();
   }, [formik.errors.email]);
 
   return (
@@ -64,12 +64,12 @@ const SectionComp10 = () => {
             onChange={formik.handleChange}
             style={{ background: 'transparent' }}
             placeholder='Email Address'
-            className='h-[inherit] w-[50%] md:w-[440px] outline-none pl-[25px] text-[18px] leading-[22px] text-[#FFFFFF80]'
+            className='h-[46px] w-[50%] md:w-[440px] outline-none pl-[10px] md:pl-[25px] text-[18px] leading-[22px] text-[#FFFFFF80]'
           />
           <button
             type='submit'
             title='Subscribe'
-            className='md:w-[150px] w-[50%] py-[12px] px-[12px] bg-[#008080] border-[#EEEEEE80] border-r-[1px] font-medium text-[#FFFFFF] text-[20px] leading-[24px] md:ml-2'>
+            className='md:w-[158px] w-[50%] py-[12px] px-[12px] bg-[#008080] border-[#EEEEEE80] border-r-[1px] font-medium text-[#FFFFFF] text-[20px] leading-[24px]'>
             Subscribe
           </button>
         </label>
