@@ -113,12 +113,24 @@ const Card: FC<CardProps> = ({
     if (swipes.isSwipeLeft) {
       setIndex((prevIndex: number) => prevIndex + 1);
       setCurrentImg(imgsArr[index]);
+      setTransitionTracker(true);
+      setTimeout(() => {
+        setTransitionTracker(false);
+      }, 1000);
     }
     if (swipes.isSwipeRight) {
       setIndex((prevIndex: number) => prevIndex - 1);
       setCurrentImg(imgsArr[index]);
+      setTransitionTracker(true);
+      setTimeout(() => {
+        setTransitionTracker(false);
+      }, 1000);
     }
     if (index === max) {
+      setIndex(0);
+      setTransitionTracker(false);
+    }
+    if (index < 0) {
       setIndex(0);
       setTransitionTracker(false);
     }
@@ -150,7 +162,9 @@ const Card: FC<CardProps> = ({
           }}
           className={`${imageHeight} ${
             transitionTracker && 'slide-from-right'
-          } w-full transition-all duration-500 lg:w-[367px]`}
+          } w-full transition-all duration-500 lg:w-[367px] ${
+            swipes.isSwipeRight && 'slide-to-right'
+          } ${swipes.isSwipeLeft && 'slide-to-left'}`}
           alt=''
         />
       </div>
