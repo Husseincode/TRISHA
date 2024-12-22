@@ -11,6 +11,7 @@ export const useVisibility = (
     | HTMLElement
     | HTMLHeadingElement
     | HTMLButtonElement
+    | HTMLLabelElement
   >
 ) => {
   const [isSectionShown, setIsSectionShown] = useState<boolean>(false);

@@ -53,6 +53,7 @@ const Card: FC<CardProps> = ({
     startX: 0,
     endX: 0,
   });
+  const [intvID, setIntvID] = useState<NodeJS.Timeout>();
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     const startX = event.touches[0].clientX;
@@ -85,6 +86,12 @@ const Card: FC<CardProps> = ({
     }
   };
 
+  const cancelSlideAnimation = () => {
+    if (intvID) {
+      clearInterval(intvID);
+    }
+  };
+
   useEffect(() => {
     const changeImage = () => {
       const max = imgsArr.length - 1;
@@ -104,6 +111,7 @@ const Card: FC<CardProps> = ({
       }, 1000);
     };
     const intervalID = setInterval(changeImage, 5000);
+    setIntvID(intervalID);
     return () => clearInterval(intervalID);
   }, [index]);
 
@@ -146,6 +154,7 @@ const Card: FC<CardProps> = ({
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onClick={cancelSlideAnimation}
         className={`w-full ${imageContainer} flex flex-col gap-[2px] overflow-hidden`}>
         <button
           type='button'
@@ -192,6 +201,7 @@ const Card: FC<CardProps> = ({
               alt=''
               onClick={() => {
                 setCurrentImg(img1);
+                cancelSlideAnimation();
               }}
               className='w-[36px] h-[36px] rounded-full border-[1px] border-[#DAE3EB]'
             />
@@ -203,6 +213,7 @@ const Card: FC<CardProps> = ({
               alt=''
               onClick={() => {
                 setCurrentImg(img2);
+                cancelSlideAnimation();
               }}
               className='w-[36px] h-[36px] rounded-full border-[1px] border-red-600'
             />
@@ -214,6 +225,7 @@ const Card: FC<CardProps> = ({
               alt=''
               onClick={() => {
                 setCurrentImg(img3);
+                cancelSlideAnimation();
               }}
               className='w-[36px] h-[36px] rounded-full border-[1px] border-zinc-800'
             />
