@@ -48,7 +48,7 @@ const SectionComp10 = () => {
     <form
       onSubmit={formik.handleSubmit}
       className='min-h-[500px] seccomp10BG flex items-center justify-center md:py-[80px] md:px-[30px] py-[51px] px-[37px] bg-[#757272] w-full'>
-      <div className='container flex flex-col items-center justify-center gap-[15px] min-h-[250px]'>
+      <div className='container overflow-hidden flex flex-col items-center justify-center gap-[15px] min-h-[250px]'>
         <span
           ref={textRef}
           className={`font-bold lg:text-[24px] text-[22px] leading-[24px] lg:leading-[29px] text-center text-[#FFFFFF] ${

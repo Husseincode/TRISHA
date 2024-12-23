@@ -1,24 +1,34 @@
 /** @format */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import React from 'react';
+import React, { useRef } from 'react';
 import './styles.css';
 import Card from '@/app/components/Card';
 import { data } from '@/app/components/Section4/data';
+import { useVisibility } from '../Ref/ref';
 
 const SectionComp7 = () => {
+  const divRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const isDivVisible = useVisibility(divRef);
+  //const areCardsVisible = useVisibility(cardRef);
+
   return (
     <section className='flex items-center justify-center'>
-      <div className='min-h-[800px] container w-full flex gap-[27px] lg:flex-row flex-col mt-[80px] px-2'>
+      <div className='min-h-[800px] overflow-hidden container w-full flex gap-[27px] lg:flex-row flex-col mt-[80px] lg:px-2 px-4'>
         <div
-          className={`lg:w-[409px] w-full h-[770px] special_collection flex items-end px-4`}>
+          ref={divRef}
+          className={`lg:w-[409px] w-full h-[770px] special_collection flex items-end px-4 ${
+            isDivVisible && ' slide-from-left'
+          }`}>
           <div className='h-[270px] w-full flex flex-col justify-between'>
             <div>
               <h2 className='font-extrabold text-[40px] leading-[48px] text-center text-[#FFFFFF]'>
                 Special <br /> collection of
               </h2>
             </div>
-            <div className='w-full flex justify-center items-center'>
+            <div className='w-full flex justify-center items-center mb-6'>
               <time className='font-semibold text-[100px] leading-[121px] text-center text-[#008080]'>
                 2024
               </time>
@@ -44,9 +54,10 @@ const SectionComp7 = () => {
                     outdatedPrice={items.outdatedPrice}
                     subImages={items.images}
                     title={items.text}
+                    ref={cardRef}
                     className={`${
                       idx === 2 && ' justify-center w-fit mx-auto'
-                    }`}
+                    } `}
                     //ref={cardRef}
                     // className={`${isCardShown && 'slide-from-right'}`}
                   />

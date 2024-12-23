@@ -11,7 +11,7 @@ const SectionComp11 = () => {
   const divRef = useRef<HTMLDivElement>(null);
 
   const isHeadingVisible = useVisibility(headRef);
-  const isDivVisible = useVisibility(divRef);
+  //const isDivVisible = useVisibility(divRef);
 
   return (
     <div className='w-full flex items-center justify-center min-h-[727px] py-[20px] lg:py-[80px] px-[30px]'>
@@ -29,7 +29,7 @@ const SectionComp11 = () => {
               onClick={() => {}}
               ref={divRef}
               {...item}
-              className={`${isDivVisible && 'slide-from-right'}`}
+              // className={`${isDivVisible && 'slide-from-right'}`}
               key={idx}
             />
           ))}

@@ -17,6 +17,7 @@ import Section9Comp from './Section9';
 import SectionComp10 from './Section10';
 import SectionComp11 from './Section11';
 import SectionComp12 from './Section12';
+import Footer from './Footer';
 
 const EntryPoint = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -47,6 +48,7 @@ const EntryPoint = () => {
       <SectionComp10 />
       <SectionComp11 />
       <SectionComp12 />
+      <Footer />
     </section>
   );
 };
