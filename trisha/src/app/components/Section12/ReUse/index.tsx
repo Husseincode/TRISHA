@@ -10,7 +10,7 @@ interface ReUseProps {
 
 const ReUse: FC<ReUseProps> = ({ heading, text, image }) => {
   return (
-    <div className='lg:w-1/3 w-full border-[1px] py-[28px] px-[39px] border-[#00000080] h-[156px] justify-center items-center flex'>
+    <div className='lg:w-1/3 w-full border-[1px] py-[28px] px-[20px] lg:px-[39px] border-[#00000080] h-[156px] justify-center items-center flex'>
       <div className='w-full h-[100px] lg:gap-[12px] gap-[12px] md:gap-[50px] flex items-center'>
         <div className='w-[67px] flex justify-center items-center h-[100px] py-[31px] px-[14px] bg-[#008080]'>
           <Image

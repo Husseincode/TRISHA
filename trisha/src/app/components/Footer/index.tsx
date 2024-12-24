@@ -35,7 +35,7 @@ const Footer = () => {
             <div className='min-h-[49px] w-full px-[40px] gap-[40px] lg:gap-[149px] flex justify-between lg:flex-row flex-col items-center'>
               <div
                 ref={firstRef}
-                className={`gap-[15px] flex items-center ${
+                className={`gap-[15px] flex md:flex-row flex-col items-center ${
                   isFirstDivVisible && 'slide-from-left'
                 }`}>
                 <Image
@@ -45,7 +45,7 @@ const Footer = () => {
                   height={44}
                   className='w-[44px] h-[44px]'
                 />
-                <div className='flex flex-col gap-[9px]'>
+                <div className='flex items-center md:items-start flex-col gap-[9px]'>
                   <span className='font-bold text-base leading-[20px] text-[#BFE0E0]'>
                     Do you have any questions?
                   </span>
@@ -59,7 +59,7 @@ const Footer = () => {
 
               <div
                 ref={secondRef}
-                className={`gap-[15px] flex items-center ${
+                className={`gap-[15px] flex md:flex-row flex-col items-center ${
                   isSecondDivVisible && 'slide-from-bottom'
                 }`}>
                 <Image
@@ -69,7 +69,7 @@ const Footer = () => {
                   height={44}
                   className='w-[44px] h-[44px]'
                 />
-                <div className='flex flex-col gap-[9px]'>
+                <div className='flex flex-col items-center md:items-start gap-[9px]'>
                   <span className='font-bold text-base leading-[20px] text-[#BFE0E0]'>
                     Mon - Fri: 8:00 - 17:00
                   </span>
@@ -241,10 +241,10 @@ const Footer = () => {
         </div>
         <div
           ref={bottomDiv}
-          className={`min-h-[67px] flex lg:flex-row flex-col mt-8 lg:mt-0 mb-3 justify-between items-center py-[10px] gap-[15px] px-[20px] ${
+          className={`min-h-[67px] flex lg:flex-row flex-col mt-8 lg:mt-0 mb-3 justify-between items-center py-[10px] gap-[15px] lg:px-[20px] px-[10px] ${
             isBottomDivVisible && 'slide-from-left'
           }`}>
-          <div className='flex gap-[5px]'>
+          <div className='flex justify-center items-center flex-wrap gap-[5px]'>
             {cards.map((item, idx: number) => (
               <Image
                 src={item.image}
@@ -256,7 +256,7 @@ const Footer = () => {
               />
             ))}
           </div>
-          <span className='font-normal text-[18px] leading-[22px] text-[#BFE0E0]'>
+          <span className='font-normal text-[18px] text-center leading-[22px] text-[#BFE0E0]'>
             All right reserved C 2024, Design Theme{' '}
           </span>
         </div>

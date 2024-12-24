@@ -1,14 +1,39 @@
 /** @format */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './index.css';
 import Image from 'next/image';
 import HeroImage from '@/assets/hero-image.png';
 import Button from '@/app/components/Button';
+import { usePageContext } from '@/app/context/pageContext';
 
 const Hero = () => {
+  const { setIsScrolled } = usePageContext();
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const getTop: number | undefined | any =
+        ref.current?.getBoundingClientRect().bottom;
+      //const windowHeight = window.innerHeight;
+      //console.log('hero', getTop, windowHeight);
+      if (getTop > 626) {
+        setIsScrolled(false);
+      }
+      if (getTop <= 626) {
+        setIsScrolled(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
-    <div className='bg w-full justify-center items-center flex min-h-[375px] md:min-h-[586px] lg:min-h-[767px]'>
+    <div
+      ref={ref}
+      className='bg w-full mt-[100px] justify-center items-center flex min-h-[375px] md:min-h-[586px] lg:min-h-[767px]'>
       <div className='container py-[50px] px-[20px] flex flex-col items-center gap-[20px] slide-from-bottom'>
         <Image
           src={HeroImage}

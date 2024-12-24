@@ -56,7 +56,7 @@ const SectionComp2 = () => {
         {/**Card 2 */}
         <div
           ref={cardRef2}
-          className={`min-h-[566px] card2Bg md:w-[544px] lg:w-[400px] w-full flex flex-col items-center justify-center gap-[25px] px-10 lg:px-[40px] border-[13px] border-gray-500 ${
+          className={`min-h-[566px] card2Bg md:w-[544px] lg:w-[400px] w-full flex flex-col items-center justify-center gap-[25px] px-10 lg:px-[40px] border-[5px] md:border-[13px] border-gray-500 ${
             isCardRef2Shown && 'slide-from-right'
           }`}>
           {/* <Image
@@ -66,7 +66,7 @@ const SectionComp2 = () => {
             height={287}
             className='lg:h-[287px] w-full'
           /> */}
-          <h2 className='font-bold lg:text-[48px] text-[36px] leading-[44px] lg:leading-[58px] text-center text-[#008080] font-inter'>
+          <h2 className='font-bold lg:text-[48px] text-[36px] leading-[54px] lg:leading-[58px] text-center text-[#008080] font-inter'>
             Women wigs
           </h2>
           <span className='font-normal text-base leading-[16px] lg:leading-[18px] text-center text-white'>

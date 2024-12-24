@@ -36,7 +36,7 @@ const SectionComp7 = () => {
           </div>
         </div>
         <div className='min-h-[682px] lg:min-w-[800px] w-full flex flex-col gap-[27px]'>
-          <h2 className='font-bold text-[48px] leading-[58px] text-[#008080]'>
+          <h2 className='font-bold text-[38px] text-center lg:text-start md:text-[48px] leading-[58px] text-[#008080]'>
             Wigs categories
           </h2>
           {/**Can be modified later but now fixed as it is not fetching any data */}

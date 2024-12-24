@@ -25,7 +25,7 @@ const SectionComp3 = () => {
         <h2 className='font-inter font-bold lg:leading-[85px] md:leading-[61px] leading-[44px] lg:text-[70px] md:text-[50px] text-[36px] text-center text-[#008080]'>
           Save Up To 40% off
         </h2>
-        <span className='font-normal lg:text-[20px] text-base lg:leading-[24px] md:leading-[18px] leading-[14px] text-center text-white'>
+        <span className='font-normal lg:text-[20px] text-base lg:leading-[24px] md:leading-[18px] leading-[20px] text-center text-white'>
           Hot deal! Hurry discover your dream hair from our collections. And
           create many unique and innovative style for our hair at unbelievable
           40% off on your first wigs. Quality wigs at affordable price in the
